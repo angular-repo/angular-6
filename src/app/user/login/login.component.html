@@ -1,0 +1,61 @@
+<!-- <h2 mat-dialog-title>Install Angular</h2> -->
+
+    <div class="ngdialog-message" mat-dialog-content style="overflow:hidden">
+
+        <h3 class="text-center">Login</h3>
+    
+    
+        <form id="loginform1" name="userForm1"  class="form-horizontal login-padd" role="form" novalidate autocomplete="off">
+          
+    
+          <div class="control-btn form-group col-sm-12">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="login-username" type="email" class="form-control" name="email" placeholder="Email"  required>
+            </div>
+           
+          </div>
+          <div class="control-btn form-group col-sm-12">
+            <div class="input-group" >
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            
+          </div>
+          <div class="form-group margin-bottom">
+            <div class="col-sm-6 col-xs-6">
+              <button type="submit" class="btn btn-block log-btn log-btn-wd">
+                Login
+              </button>
+            </div>
+    
+            <div class="col-md-6 col-xs-6 control">
+    
+              <div class="signup pull-right" ng-controller="registration">
+                <a href="#" data-toggle="modal" (click)="Basicplan()" data-dismiss="modal">Create an Account?</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group margin-bottom">
+            <div class="col-md-6 control col-xs-6">
+              <div class="signup">
+                <a href="#" (click)="forgotDialog()" data-toggle="modal" data-target="#ForgotBox" data-dismiss="modal">Forgot Password?</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <div class="checkbox login-check">
+                <label>
+                  <input type="checkbox" class="inverted" (click)="rememberMe()">
+                  <span class="text login-rem">Remember Password?</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <h4 class="text-center" style="margin-top:-5px;">- Or -</h4>
+          <div class="form-group col-sm-12">
+            <a href="/auth/facebook" class="text-center facebook-btn pull-left"><i class="fa fa-facebook-official"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook Login</a>
+            <a href="/auth/google" class="text-center google-btn pull-right"><i class="fa fa-google-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;Google+ Login</a>
+          </div>
+        </form>
+    
+      </div>
