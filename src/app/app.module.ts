@@ -14,6 +14,9 @@ import { LoginComponent } from './user/login/login.component';
 import { PropertsearchComponent } from './property/propertsearch/propertsearch.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { DataentryComponent } from './data-entry/dataentry/dataentry.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PropertyService } from './data-entry/property.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,14 @@ import { DataentryComponent } from './data-entry/dataentry/dataentry.component';
     AppRoutingModule,
     ScrollToModule.forRoot(),
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PropertyService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent]
 })

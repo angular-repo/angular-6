@@ -1,4 +1,4 @@
-<section id="propertysearch">
+<section id="propertysearch" style="margin-bottom: 45px;margin-top: 100px">
   <div class="row">
     <div class="col-md-12">
       <h3 class="text-center">Data Entry Form</h3>
@@ -11,7 +11,7 @@
         <h4 class="col-md-12">Address</h4>
         <div class="col-md-6 form-group control-btn">
           <label class="control-label">Full Address :</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="address" [(ngModel)]="property.address">
         </div>
       </div>
       <div>
@@ -19,15 +19,16 @@
           <h4 class="col-md-12">Listings</h4>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Sale Price:</label>
-            <input type="number" name="listingPrice" class="form-control">
+            <input type="number" name="listingPrice" class="form-control" [(ngModel)]="property.listingPrice">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Estimate Price:</label>
-            <input type="number" name="estimatePrice" class="form-control">
+            <input type="number" name="estimatePrice" class="form-control"
+            [(ngModel)]="property.estimatePrice">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Rental Estimate:</label>
-            <input type="number" class="form-control">
+            <input type="number" name="rentalPrice" class="form-control" [(ngModel)]="property.rentalEstimatePrice">
           </div>
         </div>
 
@@ -35,23 +36,35 @@
           <h4 class="col-md-12">Property</h4>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Bed Rooms :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="bedRoom" [(ngModel)]="property.bedRoom">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Bathsfull :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="bathsFull"
+            [(ngModel)]="property.bathsFull">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Bathshalf :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="bathHalf"
+            [(ngModel)]="property.bathHalf">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Sqft :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="sqft" 
+            [(ngModel)]='property.sqft'>
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Subtype :</label>
-            <select class="form-control ">
+            <!-- <ng-select [items]="propertyType" name="group" [(ngModel)]="property.homeType"></ng-select> -->
+
+            <select  name="homeType" [(ngModel)]="property.homeType">
+              <option *ngFor="let home of propertyType" [ngValue]="home">
+                  {{home.name}}
+              </option>
+          </select>
+          
+            
+            <!-- <select class="form-control ">
               <option label="Apartments" value="1" selected="selected">Apartments</option>
               <option label="Condos/Coops" value="2">Condos/Coops</option>
               <option label="Town Home" value="3">Town Home</option>
@@ -59,33 +72,35 @@
               <option label="Forms &amp; Acrea" value="5">Forms &amp; Acrea</option>
               <option label="Single Family" value="5">Single Family</option>
               <option label="Multi Family" value="6">Multi Family</option>
-            </select>
+            </select> -->
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Year Built :</label>
-            <input type="number" name="yearbuilt" class="form-control">
+            <input type="number" name="yearbuilt" class="form-control"
+            [(ngModel)]="property.yearbuilt">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Heating :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="heating"
+            [(ngModel)]="property.heating">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Cooling :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="cooling" [(ngModel)]="property.cooling">
           </div>
         </div>
         <div class="row">
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Lot Size :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="lotSize" [(ngModel)]="property.lotSize">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Lot Description :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="lotDescription" [(ngModel)]="property.lotDescription">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Appliances :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="appliances" [(ngModel)]="property.appliances">
           </div>
           <!-- <div class="col-md-3 form-group control-btn">
 								<label class="control-label">Flooring Size :</label>
@@ -93,51 +108,51 @@
 							</div> -->
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Flooring :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="flooring" [(ngModel)]="property.flooring">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Basement :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="basement" [(ngModel)]="property.basement">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Interior Features :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="interiorFeatures" [(ngModel)]="property.interiorFeatures">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Exterior Features :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="exteriorFeatures" [(ngModel)]="property.exteriorFeatures">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Style :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="style" [(ngModel)]="property.style">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Roof :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="roof" [(ngModel)]="property.roof">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">View :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="view" [(ngModel)]="property.view">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Stories :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="stories" [(ngModel)]="property.stories">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Fire Places :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="firePlace" [(ngModel)]="property.firePlace">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Pool :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="pool" [(ngModel)]="property.pool">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Water :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="water" [(ngModel)]="property.water">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Foundation :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="foundation" [(ngModel)]="property.foundation">
           </div>
 
         </div>
@@ -145,325 +160,34 @@
           <h4 class="col-md-12">Description</h4>
           <div class="col-md-6 form-group control-btn">
             <label class="control-label">Description :</label>
-            <textarea class="form-control" role="15"></textarea>
-          </div>
+            <textarea class="form-control" role="15" name="description" [(ngModel)]="property.description"></textarea>
+          </div> 
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h4 class="col-md-12 nopaddingleft">Potential Extra Bedroom</h4>
-            <div class="col-md-1">
-              <div class="checkbox-animated-inline">
-                <input id="checkbox_animated_2" type="checkbox">
-                <label for="checkbox_animated_2">
-                  <span class="check"></span>
-                  <span class="box"></span>
-                  Den
-                </label>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="checkbox-animated-inline">
-                <input id="checkbox_animated_22" type="checkbox">
-                <label for="checkbox_animated_22">
-                  <span class="check"></span>
-                  <span class="box"></span>
-                  Living Rooms
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox-animated-inline">
-                <input id="checkbox_animated_222" type="checkbox">
-                <label for="checkbox_animated_222">
-                  <span class="check"></span>
-                  <span class="box"></span>
-                  Attic
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox-animated-inline">
-                <input id="checkbox_animated_2222" type="checkbox">
-                <label for="checkbox_animated_2222">
-                  <span class="check"></span>
-                  <span class="box"></span>
-                  Others
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h4 class="col-md-12 nopaddingleft">VALUE ADDERS</h4>
-            <div class="col-md-12 form-group control-btn">
-              <div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_300" type="checkbox">
-                  <label for="checkbox_animated_300">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    New Window
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_301" type="checkbox">
-                  <label for="checkbox_animated_301">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    New Appliances
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_302" type="checkbox">
-                  <label for="checkbox_animated_302">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Hardwood Floors
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_303" type="checkbox">
-                  <label for="checkbox_animated_303">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Central Heat
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_304" type="checkbox">
-                  <label for="checkbox_animated_304">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Central AC
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_305" type="checkbox">
-                  <label for="checkbox_animated_305">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Attached Garage
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_306" type="checkbox">
-                  <label for="checkbox_animated_306">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Unattached Garage
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_307" type="checkbox">
-                  <label for="checkbox_animated_307">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    New Roof
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_308" type="checkbox">
-                  <label for="checkbox_animated_308">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Basement
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_10_v10" type="checkbox">
-                  <label for="checkbox_animated_10_v10">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Amenities
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_11_v11" type="checkbox">
-                  <label for="checkbox_animated_11_v11">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Extra Income Potential
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_12_v12" type="checkbox">
-                  <label for="checkbox_animated_12_v12">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Mixed Use
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_13_v13" type="checkbox">
-                  <label for="checkbox_animated_13_v13">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    As-Is Sale
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_14_v14" type="checkbox">
-                  <label for="checkbox_animated_14_v14">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Outdoor Entertaining
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_15_v15" type="checkbox">
-                  <label for="checkbox_animated_15_v15">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Deck
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_17_v17" type="checkbox">
-                  <label for="checkbox_animated_17_v17">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Large Lot
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_18_v18" type="checkbox">
-                  <label for="checkbox_animated_18_v18">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Storage Buildings
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_19_v19" type="checkbox">
-                  <label for="checkbox_animated_19_v19">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Landscaping
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_20_v20" type="checkbox">
-                  <label for="checkbox_animated_20_v20">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    55+
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_21_v21" type="checkbox">
-                  <label for="checkbox_animated_21_v21">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Porch
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_22_v22" type="checkbox">
-                  <label for="checkbox_animated_22_v22">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Multifamily
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_23_v23" type="checkbox">
-                  <label for="checkbox_animated_23_v23">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Sprinkler System
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_24_v24" type="checkbox">
-                  <label for="checkbox_animated_24_v24">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Currently Rented
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_25_v25" type="checkbox">
-                  <label for="checkbox_animated_25_v25">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Gated Community
-                  </label>
-                </div>
-
-                <div class="checkbox-animated-inline col-md-2">
-                  <input id="checkbox_animated_26_v26" type="checkbox">
-                  <label for="checkbox_animated_26_v26">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Some Upgrades
-                  </label>
-                </div>
-                <div class="checkbox-animated-inline col-md-3">
-                  <input id="checkbox_animated_16_v16" type="checkbox">
-                  <label for="checkbox_animated_16_v16">
-                    <span class="check"></span>
-                    <span class="box"></span>
-                    Agent Approved Investment
-                  </label>
-                </div>
-                <div class="col-md-5 form-group-horizantal control-btn">
-                  <div style="margin-top:6px">
-                    <label class="control-label col-md-4">Other Value-Adders :</label>
-                    <div class="col-md-8">
-                      <input type="text" class="form-control ">
-                    </div>
-                  </div>
-
-                </div>
-                <!-- <div class="checkbox-animated-inline col-md-2">
-										<input id="checkbox_animated_309" type="checkbox" tabindex="0" ng-model="property.comingsoon">
-										<label for="checkbox_animated_309">
-											<span class="check"></span>
-											<span class="box"></span>
-										Other
-										</label>
-									</div>
-									<div class="col-md-2">
-										<input type="text" name="control">
-									</div> -->
-              </div>
-            </div>
-          </div>
-        </div>
+        
         <div class="row">
           <h4 class="col-md-12">Parking</h4>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Garage Size :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="garage" [(ngModel)]="property.garage">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Garage Features :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="garageFeatures" [(ngModel)]="property.garageFeatures">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Garage Space :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="garageSpace" [(ngModel)]="property.garageSpace">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Description :</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="garageDescription" [(ngModel)]="property.garageDescription">
           </div>
         </div>
         <div class="row">
           <h4 class="col-md-12">MLS</h4>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">MLSID :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="mlsId" [(ngModel)]="property.mlsId">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Status :</label>
@@ -474,27 +198,27 @@
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Days On Market :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="daysOnMarket" [(ngModel)]="property.daysOnMarket">
           </div>
         </div>
         <div class="row">
           <h4 class="col-md-12">School</h4>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Elementary School :</label>
-            <input type="text" value="" class="form-control">
+            <input type="text" value="" class="form-control" name="elementartSchool" [(ngModel)]="property.elementartSchool">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">Middle School :</label>
-            <input type="text" value="" class="form-control">
+            <input type="text" value="" class="form-control" name="middleSchool" [(ngModel)]="property.middleSchool">
           </div>
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">High School :</label>
-            <input type="text" value="" class="form-control">
+            <input type="text" value="" class="form-control"[(ngModel)]="property.highSchool" name="highSchool" >
           </div>
 
           <div class="col-md-3 form-group control-btn">
             <label class="control-label">District :</label>
-            <input type="text" value="" class="form-control">
+            <input type="text" value="" class="form-control" name="district" [(ngModel)]="property.district">
           </div>
         </div>
         <!-- <div class="row" style="display:none">
@@ -528,7 +252,7 @@
             <div class="col-md-12 form-group control-btn">
               <div>
                 <div class="checkbox-animated-inline">
-                  <input id="checkbox_animated_200" type="checkbox">
+                  <input id="checkbox_animated_200" type="checkbox" name="ForeClousre" [(ngModel)]="property.foreClousre">
                   <label for="checkbox_animated_200">
                     <span class="check"></span>
                     <span class="box"></span>
@@ -536,7 +260,7 @@
                   </label>
                 </div>
                 <div class="checkbox-animated-inline">
-                  <input id="checkbox_animated_201" type="checkbox">
+                  <input id="checkbox_animated_201" type="checkbox" name="commingSoon" [(ngModel)]="property.commingSoon">
                   <label for="checkbox_animated_201">
                     <span class="check"></span>
                     <span class="box"></span>
@@ -570,7 +294,7 @@
             <h4 class="col-md-12 nopaddingleft">Association</h4>
             <div class="control-btn">
               <label class="control-label">Association :</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="association" [(ngModel)]="property.association">
             </div>
           </div>
           <div class="col-md-3">
@@ -578,7 +302,7 @@
             <div class="control-btn">
               <label class="control-label">Date :</label>
 
-              <input type="text" class="form-control" type="date"><!-- ngIf: isOpen -->
+              <input type="text" class="form-control" type="date" name="lastModified" [(ngModel)]="property.lastModified"><!-- ngIf: isOpen -->
             </div>
 
 
@@ -588,35 +312,36 @@
           <h4 class="col-md-12">Tax</h4>
           <div class="col-md-6 form-group control-btn">
             <label class="control-label">Tax Year :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="taxyear" [(ngModel)]="property.taxyear">
           </div>
           <div class="col-md-6 form-group control-btn">
             <label class="control-label">Tax Annual Amount :</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="taxannualamount" [(ngModel)]="property.taxamount">
           </div>
         </div>
       </div>
       <div class="row">
         <h4 class="col-md-12">Listing Provided By</h4>
-        <div class="btn-group btn-group-vertical radio-cust" data-toggle="buttons">
+        <div class="btn-group btn-group-vertical radio-cust" data-toggle="buttons" >
           <div class="col-xs-4 nopaddingleft">
             <label class="btn out-border">
-              <input type="radio" class="out-border" name="gender1"> <span>By Agent</span>
+              <input type="radio" class="out-border" name="gender1" [(ngModel)]="property.providedBy" [value]="byAgent"> <span>By Agent</span>
             </label>
           </div>
           <div class="col-xs-4">
             <label class="btn out-border">
-              <input type="radio" name="gender1" class="out-border"><span> By Owner</span>
+              <input type="radio" name="gender1" class="out-border" [(ngModel)]="property.providedBy" [value]="byOwner"><span> By Owner</span>
             </label>
           </div>
           <div class="col-xs-4">
             <label class="btn out-border">
-              <input type="radio" name="gender1" class="out-border"><span> By Builder</span>
+              <input type="radio" name="gender1" class="out-border" [value]="byBuilder" [(ngModel)]="property.providedBy"><span> By Builder</span>
             </label>
           </div>
+          {{property.providedBy}}
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="property.providedBy=='byAgent'">
         <h4 class="col-md-12">Sale By Agent</h4>
 
         <div class="col-md-3 form-group control-btn">
@@ -634,7 +359,7 @@
         </div>
 
       </div>
-      <div>
+      <div  *ngIf="property.providedBy=='byOwner'">
         <h4 class="col-md-12">Sale By Owner</h4>
         <div class="col-md-3 form-group control-btn">
           <label class="control-label">First Name :</label>
@@ -645,7 +370,7 @@
           <input type="text" class="form-control">
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="property.providedBy=='byBuilder'">
         <h4 class="col-md-12">Sale By Builder</h4>
         <div class="col-md-3 form-group control-btn">
           <label class="control-label">First Name :</label>
@@ -658,7 +383,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
-          <button type="button"  class="btn log-btn rating-btn">Submit</button>
+          <button type="button"  class="btn log-btn rating-btn" (click)="saveproperty()">Submit</button>
         </div>
       </div>
     </form>
